@@ -1,6 +1,6 @@
-package epsi.javajdbc.dal;
+package epsi.javajdbcTP5.dal;
 
-import epsi.javajdbc.bo.Fournisseur;
+import epsi.javajdbcTP5.bo.Fournisseur;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

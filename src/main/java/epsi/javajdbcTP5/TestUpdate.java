@@ -1,12 +1,12 @@
-package epsi.javajdbc;
+package epsi.javajdbcTP5;
 
-import epsi.javajdbc.bo.Fournisseur;
-import epsi.javajdbc.dal.FournisseurDaoJdbc;
+import epsi.javajdbcTP5.bo.Fournisseur;
+import epsi.javajdbcTP5.dal.FournisseurDaoJdbc;
 
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class TestDelete {
+public class TestUpdate {
     private static final String url;
     private static final String user;
     private static final String pwd;
@@ -22,8 +22,7 @@ public class TestDelete {
         try {
             Fournisseur f8 = new Fournisseur(8, "f8");
             FournisseurDaoJdbc FDJ = new FournisseurDaoJdbc();
-            //FDJ.insert(f8);
-            FDJ.delete(f8);
+            FDJ.update("Dubois & Fils", "L''espace création");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

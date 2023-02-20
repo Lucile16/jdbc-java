@@ -1,4 +1,4 @@
-package epsi.javajdbc.bo;
+package epsi.javajdbcTP5.bo;
 
 public class Fournisseur {
     private int id;

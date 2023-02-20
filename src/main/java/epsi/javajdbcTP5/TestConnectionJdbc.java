@@ -1,4 +1,4 @@
-package epsi.javajdbc;
+package epsi.javajdbcTP5;
 
 import java.sql.*;
 

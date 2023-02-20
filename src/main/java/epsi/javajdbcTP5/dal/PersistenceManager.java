@@ -1,4 +1,4 @@
-package epsi.javajdbc.dal;
+package epsi.javajdbcTP5.dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

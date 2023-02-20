@@ -1,10 +1,8 @@
-package epsi.javajdbc;
+package epsi.javajdbcTP5;
 
-import epsi.javajdbc.bo.Fournisseur;
-import epsi.javajdbc.dal.FournisseurDaoJdbc;
+import epsi.javajdbcTP5.dal.FournisseurDaoJdbc;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class TestSelect {

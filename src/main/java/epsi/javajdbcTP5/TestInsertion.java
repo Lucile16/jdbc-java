@@ -1,9 +1,12 @@
-package epsi.javajdbc;
+package epsi.javajdbcTP5;
+
+import epsi.javajdbcTP5.bo.Fournisseur;
+import epsi.javajdbcTP5.dal.FournisseurDaoJdbc;
 
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class Main {
+public class TestInsertion {
     private static final String url;
     private static final String user;
     private static final String pwd;
@@ -16,16 +19,10 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
-        try (Connection cnx = DriverManager.getConnection(url, user, pwd);
-             PreparedStatement stmt = cnx.prepareStatement("SELECT * FROM FOURNISSEUR")) {
-            try(ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    System.out.printf("id = %d - nom = %s %n",
-                            rs.getInt("ID"),
-                            rs.getString("NOM")
-                    );
-                }
-            }
+        try {
+            Fournisseur f8 = new Fournisseur(8, "f8");
+            FournisseurDaoJdbc FDJ = new FournisseurDaoJdbc();
+            FDJ.insert(f8);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
