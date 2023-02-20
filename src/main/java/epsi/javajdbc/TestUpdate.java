@@ -15,7 +15,7 @@ public class TestUpdate {
         pwd = bundle.getString("db.password");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         try (Connection cnx = DriverManager.getConnection(url, user, pwd);
              PreparedStatement stmt = cnx.prepareStatement("UPDATE fournisseur SET NOM = ? WHERE ID = ?")) {
             stmt.setString(1, "L'espace création");

@@ -15,7 +15,7 @@ public class TestInsertion {
         pwd = bundle.getString("db.password");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         try (Connection cnx = DriverManager.getConnection(url, user, pwd);
              PreparedStatement stmt = cnx.prepareStatement("INSERT INTO fournisseur (NOM) VALUES (?)")) {
             cnx.setAutoCommit(false);

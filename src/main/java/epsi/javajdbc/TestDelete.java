@@ -15,7 +15,7 @@ public class TestDelete {
         pwd = bundle.getString("db.password");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         try (Connection cnx = DriverManager.getConnection(url, user, pwd);
              PreparedStatement stmt = cnx.prepareStatement("DELETE FROM fournisseur WHERE ID = ?")) {
             cnx.setAutoCommit(false);
