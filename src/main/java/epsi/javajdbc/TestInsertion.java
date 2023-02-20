@@ -1,5 +1,8 @@
 package epsi.javajdbc;
 
+import epsi.javajdbc.bo.Fournisseur;
+import epsi.javajdbc.dal.FournisseurDaoJdbc;
+
 import java.sql.*;
 import java.util.ResourceBundle;
 
@@ -16,15 +19,10 @@ public class TestInsertion {
     }
 
     public static void main(String[] args) throws SQLException {
-        try (Connection cnx = DriverManager.getConnection(url, user, pwd);
-             PreparedStatement stmt = cnx.prepareStatement("INSERT INTO fournisseur (NOM) VALUES (?)")) {
-            cnx.setAutoCommit(false);
-            stmt.setString(1, "La maison de la peinture");
-            int res = stmt.executeUpdate();
-            if (res == 1) {
-                System.out.println("Insertion réussie !");
-            }
-            cnx.commit();
+        try {
+            Fournisseur f8 = new Fournisseur(8, "f8");
+            FournisseurDaoJdbc FDJ = new FournisseurDaoJdbc();
+            FDJ.insert(f8);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

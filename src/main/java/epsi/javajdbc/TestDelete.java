@@ -1,5 +1,8 @@
 package epsi.javajdbc;
 
+import epsi.javajdbc.bo.Fournisseur;
+import epsi.javajdbc.dal.FournisseurDaoJdbc;
+
 import java.sql.*;
 import java.util.ResourceBundle;
 
@@ -16,15 +19,11 @@ public class TestDelete {
     }
 
     public static void main(String[] args) throws SQLException {
-        try (Connection cnx = DriverManager.getConnection(url, user, pwd);
-             PreparedStatement stmt = cnx.prepareStatement("DELETE FROM fournisseur WHERE ID = ?")) {
-            cnx.setAutoCommit(false);
-            stmt.setInt(1, 3);
-            int ex = stmt.executeUpdate();
-            if (ex == 1) {
-                System.out.println("Suppression réussie !");
-            }
-            cnx.commit();
+        try {
+            Fournisseur f8 = new Fournisseur(8, "f8");
+            FournisseurDaoJdbc FDJ = new FournisseurDaoJdbc();
+            //FDJ.insert(f8);
+            FDJ.delete(f8);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

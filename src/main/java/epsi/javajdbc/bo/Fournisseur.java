@@ -5,11 +5,11 @@ public class Fournisseur {
     private String nom;
 
     /*public Fournisseur() {
-    }
+    }*/
 
     public Fournisseur(String nom) {
         this.nom = nom;
-    }*/
+    }
 
     public Fournisseur(int id, String nom) {
         this.id = id;

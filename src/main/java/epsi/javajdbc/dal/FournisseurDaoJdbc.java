@@ -37,10 +37,6 @@ public class FournisseurDaoJdbc implements FournisseurDao {
                             rs.getString("NOM")
                     );
                 }
-                System.out.printf("Nom du ou des fournisseur(s) : %n");
-                for (Fournisseur fournisseur : lstFournisseurs) {
-                    System.out.println(fournisseur);
-                }
                 cnx.commit();
             } catch (SQLException e) {
                 cnx.rollback();
@@ -97,7 +93,7 @@ public class FournisseurDaoJdbc implements FournisseurDao {
     public boolean delete(Fournisseur fournisseur) throws SQLException {
         try (Connection cnx = DriverManager.getConnection(url, user, pwd);
              Statement stmt = cnx.createStatement()) {
-            int res = stmt.executeUpdate("DELETE FROM fournisseur WHERE ID = 6");
+            int res = stmt.executeUpdate("DELETE FROM fournisseur WHERE ID = " + fournisseur.getId());
             boolean bool = false;
             if (res == 1) {
                 System.out.println("Suppression réussie !");
