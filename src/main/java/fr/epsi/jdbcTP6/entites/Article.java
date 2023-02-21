@@ -12,6 +12,13 @@ public class Article {
     public Article() {
     }
 
+    public Article(String ref, String designation, double prix, Fournisseur fournisseur) {
+        this.ref = ref;
+        this.designation = designation;
+        this.prix = prix;
+        this.fournisseur = fournisseur;
+    }
+
     public Article(int id, String ref, String designation, double prix, Fournisseur fournisseur) {
         this.id = id;
         this.ref = ref;

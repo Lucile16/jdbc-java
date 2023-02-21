@@ -65,27 +65,15 @@ public class FournisseurDaoJdbc implements FournisseurDao {
     public int update(String ancienNom, String nouveauNom) throws SQLException {
         try (Connection cnx = DriverManager.getConnection(url, user, pwd);
              Statement stmt = cnx.createStatement()) {
+            cnx.setAutoCommit(false);
             int res = stmt.executeUpdate("UPDATE fournisseur SET NOM = '" + nouveauNom + "' WHERE NOM = '" + ancienNom + "'");
             if (res == 1) {
                 System.out.println("Modification réussie !");
             }
-            cnx.setAutoCommit(false);
-            try (ResultSet rs = stmt.executeQuery("SELECT * FROM FOURNISSEUR")) {
-                while (rs.next()) {
-                    //%n correspond saut de ligne comme "\n"
-                    //%s pour une chaîne de caractères
-                    //%d pour un entier
-                    System.out.printf("id = %d - nom = %s %n",
-                            rs.getInt("ID"),
-                            rs.getString("NOM")
-                    );
-                }
-                cnx.commit();
-            } catch (SQLException e) {
-                cnx.rollback();
-                throw new RuntimeException(e);
-            }
+            cnx.commit();
             return res;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
