@@ -1,5 +1,6 @@
-# jdbc-tp5-java
+# jdbc-java
 
+### Pour le TP5 :
 1) Pour exécuter les tests, rester sur la branche main.<br>
 2) Ensuite, double-cliquez sur un fichier de tests au choix parmi :
    - Main
@@ -9,4 +10,9 @@
    - TestSelect
    - TestUpdate<br>
 
-3) Enfin, vous pouvez lancer le test en cliquant sur le bouton "Run" en haut à droite, il ressemble à un bouton "Play" vert.
+3) Enfin, vous pouvez lancer le test en cliquant sur le bouton "Run" en haut à droite.
+
+### Pour le TP6 :
+1) Pour exécuter les tests, rester sur la branche main.<br>
+2) Ensuite, double-cliquez sur le fichier de tests nommé "TestJdbcArticles".
+3) Enfin, vous pouvez lancer le test en cliquant sur le bouton "Run" en haut à droite.
